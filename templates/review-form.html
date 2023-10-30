@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Классификация кинофильмов</title>
+    </head>
+    <body>
+    <h2> Пожалуйста, введите ваш киноотзыв: </h2>
+    {% from "_form-helpers.html" import render_field %}
+        <form method='post' action="/results">
+        <dl>
+        {{render_field (form.moviereview, cols='30', rows='1О')}}
+        </dl>
+        <div>
+            <input type="submit" value="Отправить отзыв" name='submit_btn'/>
+        </div>
+        </form>
+    </body>
+</html>

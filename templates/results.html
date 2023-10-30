@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Классификация кинофильмов</title>
+        <link rel="stylesheet" type="text/css" href="../static/style.css">
+    </head>
+
+    <body>
+        <hЗ> Ваш киноотзыв: </hЗ>
+        <div>{{content}}</div>
+        <hЗ> Прогноз: </hЗ>
+        <div>Этот киноотзыв является <strong>{{prediction}}</strong>
+            (с вероятностью: {{probability}}%) . </div>
+        <div class='button'>
+            <form action= "/thanks" method="post">
+                <input type="submit" value="Правильно" name='feedback_button'>
+                <input type="submit" value="Неправильно" name='feedback_button' >
+                <input type="hidden" value='{{prediction}}' name='prediction' >
+                <input type="hidden" value='{{content}}' name='review' >
+            </form>
+        </div>
+        <div class='button'>
+            <form action="/">
+                <input type="submit" value="Отправить еще один отзыв">
+            </form>
+        </div>
+    </body>
+</html>
